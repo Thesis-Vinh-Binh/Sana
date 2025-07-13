@@ -1,10 +1,8 @@
-#! /bin/bash
-
 export MODEL_NAME="Efficient-Large-Model/Sana_600M_512px"
 export INSTANCE_DIR="data/dreambooth/dog"
 export OUTPUT_DIR="trained-sana-lora"
 
-accelerate launch --num_processes 4 --main_process_port 29500 --gpu_ids 0,1,2,3 \
+accelerate launch --num_processes 8 --main_process_port 29500 --gpu_ids 0,1,2,3 \
   train_scripts/train_dreambooth_lora_sana.py \
   --pretrained_model_name_or_path=$MODEL_NAME  \
   --instance_data_dir=$INSTANCE_DIR \

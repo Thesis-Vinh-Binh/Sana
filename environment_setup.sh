@@ -28,3 +28,5 @@ pip install -e .
 
 # install torchprofile
 # pip install git+https://github.com/zhijian-liu/torchprofile
+
+# apt-get update && apt-get install libgl1
